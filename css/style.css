@@ -14,109 +14,210 @@
     font-family: 'Kaisei';
     src: url(../Fonts/KaiseiOpti-Regular.ttf);
 }
-
-
+@font-face {
+    font-family: 'Livvic';
+    src: url(../Fonts/Livvic-Regular.ttf);
+}
+@font-face {
+    font-family: 'KeaniaOne';
+    src: url(../Fonts/KeaniaOne-Regular.ttf);
+}
 
 
 
 
 
 body {
-    background-color: rgba(15,50,37,1);
+    background-color: white;
 }
-.gradient {
-    width: 100%;
-    height: 460%;
-    background: linear-gradient(180deg, rgba(15,50,37,1) 0%, rgba(0,20,12,1) 35%);
-    position: absolute;
-    top: 70px;
-}
-.opening {
-    background-color: rgba(15,50,36,1);
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-}
-.opening .nav ul li {
-    font-family: 'Michroma';
-    display: inline-block;
-    margin-right: 115px;
-    font-size: 12px;
-    transition: .5s;
-    letter-spacing: 3px;
-    margin-top: 20px;
-} 
-.opening .nav ul li:hover {
-    margin-top: -10px;
-    scale: 1.1;
-}
-.opening .nav ul li a {
-    text-decoration: none;
+p {
+    font-family: 'Livvic';
+    font-size: 16px;
     color: #ebebeb;
+    padding-left: 50px;
+    text-align: left;
+    padding-top: 50px;
+    letter-spacing: 3px;
 }
-.opening .nav ul li a:hover {
-    color: #F7B718;
-}
-.opening .nav ul {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-}
-.opening .logo {
-    position: absolute;
-    top: 25px;
-    left: 28px;
-}
+/* Decoration */
 
-.decoLine {
-    width: 5px;
-    height: 400px;
-    background-color: #FFDE00;
-    margin-top: 130px;
-    margin-left: 55px;
-    border-radius: 20px;
-    position: absolute;
-}
-
-.decoLineThin {
-    position: absolute;
-    width: 620px;
+.decoLineThin { 
+    background-color: #ffe500;
+    width: 660px;
     height: 1px;
-    background-color: #FFDE00;
-    border-radius: 10px;
-    top: 320px;
-    right: 571px;
-
 }
-
-.textName {
-    position: absolute;
-    left: 160px;
-    top: 150px;
-    font-size: 130px;
-}
-.textName #mario {
+#highlight-text {
+    color: #ffe500;
     font-family: 'Gugi';
-    letter-spacing: 35px;
-    color: #FFDE00;
+    font-size: 36px;
+    letter-spacing: 17px;
 }
-.textName #alrasyid {
-    font-family: 'Megrim';
-    letter-spacing: 20px;
+button {
+    background-color: #020035 ;
+    width: 170px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Livvic';
     color: #F7B718;
+    letter-spacing: 3px;
 }
 
-.quote {
+.decoNumber {
+    font-family: 'KeaniaOne';
+    font-size: 128px;
+    transform: rotate(-90deg);
+    -webkit-text-stroke: 3px rgba(247,183,24,.42);
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* Opening */
+.opening {
+    width: 100%;
+    height: 120vh;
+    background: linear-gradient(180deg,rgba(15,50,37,1) 10%, rgba(0,20,12,1) 45%);
+    position: relative;
+}
+
+
+.nav ul {
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
+.nav ul li {
+    display: inline-block;
+    padding-right: 100px;
+}
+.nav ul li a {
+    color:whitesmoke;
+    text-decoration: none;
+    font-family: 'Michroma';
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+
+
+.opening img {
+    margin: 15px;
+}
+.opening .decoLine {
+    position: absolute;
+    left: 43px;
+    top: 210px;
+    width: 5px;
+    height: 380px;
+    background-color: #ffe500;
+    border-radius: 30px;
+}
+
+.opening .decoLineThin {
+    position: absolute;
+    background-color: #ffe500;
+    width: 660px;
+    height: 1px;
+    top: 400px;
+    left: 120px;
+}
+.opening .name {
+    margin-top: 150px;
+    margin-left: 120px;
+    font-size: 130px;
+    letter-spacing: 35px;
+}
+.opening .name #mario {
+    font-family: 'Gugi';
+    color: #ffe500;
+} 
+.opening .name #alrasyid {
+    font-family: 'Megrim';
+    color: #F7B718;
+    letter-spacing: 25px;
+}
+
+.opening .quote {
     font-family: 'Kaisei';
     font-size: 32px;
     color: #ebebeb;
     top: 556px;
     left: 52px;
     letter-spacing: 5px;
-    position: relative;
+    margin-left: 50px;
+    margin-top: 100px;
 }
-.quote #quote1 {
+.opening .quote #responsibility {
     color: #F7B718;
 }
 
+/* About Page*/
+.about {
+    background: linear-gradient(0deg ,rgba(15,50,37,1) 10%, rgba(0,20,12,1) 60%);
+    width: 100%;
+    /* height: 100vh; */
+    display: flex;
+    padding-top: 60px;
+}
+.about .about-me .decoNumber {
+    position: absolute; 
+    top: 280px;
+    right: -220px;
+    letter-spacing: 30px;
+}
+
+
+/* About Me */
+.about-me {
+    width: 55%;
+    position: relative;
+}
+.about-me #highlight-text {
+    margin-left: 50px;
+}
+.about-me .decoLineThin {
+    width: 55%;
+    margin-left: 50px;
+}
+.about-me p { 
+    padding-right: 150px;
+}
+.about-me button {
+    margin: 50px;
+    margin-top: 100px;
+}
+
+
+/* image profile */
+.image-profile {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+.image-profile .image-resolution {
+    width: 600px ;
+    height: 400px;
+    background-color: steelblue;
+    margin-left: 90px;
+}
+.my-name {
+    font-size: 36px;
+    color: #ffe500;
+    margin-left: 210px;
+    letter-spacing: 5px;
+}
+.my-name #mario {
+    font-family: 'Gugi';
+}
+.my-name #alrasyid {
+    font-family: 'Megrim';
+}
+
+
+/* Project */
+.project {
+    background-color: rgba(15,50,37,1);
+    display: grid;
+
+}
