@@ -1,0 +1,53 @@
+
+
+@font-face {
+    src: url(../Fonts/Gugi-Regular.woff);
+    font-family: 'Gugi';
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    src: url(../Fonts/Megrim-Regular.woff);
+    font-family: 'Megrim';
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    src: url(../Fonts/Metrophobic-Regular.woff);
+    font-family: 'Metrophobic';
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    src: url(../Fonts/Livvic-Regular.woff);
+    font-family: 'Livvic';
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    src: url(../Fonts/Livvic-Medium.woff);
+    font-family: 'Livvic';
+    font-style: normal;
+    font-weight: medium;
+}
+@font-face {
+    src: url(../Fonts/Livvic-Light.woff);
+    font-family: 'Livvic';
+    font-style: normal;
+    font-weight: lighter;
+}
+@font-face {
+    src: url(../Fonts/Livvic-Italic.woff);
+    font-family: 'Livvic';
+    font-style: italic;
+    font-weight: normal;
+}
+@font-face {
+    src: url(../Fonts/Livvic-Bold.woff);
+    font-family: 'Livvic';
+    font-style: bold;
+    font-weight: normal;
+}
