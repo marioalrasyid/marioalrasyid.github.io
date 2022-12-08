@@ -374,6 +374,7 @@ h1 .alrasyid {
         transform: translateX(100%);
         transition: all 800ms;
         opacity: 0;
+        z-index: 99;
     }
     nav ul.slide {
         opacity: 1;
