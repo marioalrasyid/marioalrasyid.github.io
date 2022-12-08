@@ -51,3 +51,19 @@
     font-style: bold;
     font-weight: normal;
 }
+
+/* 404 PAGE FONTS */
+@font-face {
+    font-family: 'KeaniaOne';
+    src: url(../Fonts/keaniaone-regular.woff);
+}
+
+@font-face {
+    font-family: 'Glich';
+    src: url(../Fonts/rubikglitch-regular.woff);
+}
+
+@font-face {
+    font-family: 'Averia';
+    src: url(../Fonts/averialibre-regular.woff);
+}

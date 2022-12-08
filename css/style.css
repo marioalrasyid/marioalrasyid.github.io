@@ -19,6 +19,8 @@ body {
     background-color: var(--bg-clr);
     overflow-x: hidden;
 }
+
+/* NAVIGATION */
 nav {
     height: 100px;
     display: flex;
@@ -52,14 +54,14 @@ nav li a:hover {
     color: var(--primary-clr-2);
 }
 
+
+/* NAV BAR MENU */
 .menu {
     display: none;
     flex-direction: column;
     height: 20px;
     justify-content: space-between;
     position: relative;
-
-
 }
 .menu input {
     position: absolute;
@@ -71,7 +73,6 @@ nav li a:hover {
     cursor: pointer;
     z-index: 2;
 }
-
 .menu span {
     display: block;
     width: 28px;
@@ -80,7 +81,6 @@ nav li a:hover {
     background-color: var(--primary-clr);
     transition: all 800ms;
 }
-
 .menu span:nth-child(2){
     transform-origin: 0 0;
 }
@@ -100,19 +100,266 @@ nav li a:hover {
     background-color: aliceblue;
 }
 
+/* CONTENT */
+.container {
+    /* border: 2px solid red; */
+    display: grid;
+    padding: 0 30px ;
+    margin-top: 50px;
+    gap: 30px;
+}
+/* HERO */
+.hero {
+    width: 100%;
+    height: 25em;
+    border: 1px solid var(--primary-clr);
+    position: relative;
+}
+.deco-box {
+    width: calc(7vmax + 3em);
+    height: 75%;
+    background-color: var(--bg-clr-2);
+    position: absolute;
+    margin: 10px;
+    z-index: -1;
+}
+
+.hero h1 {
+    margin: 60px 40px;
+}
+h1 .mario {
+
+    font-family: 'Gugi';
+    font-size: calc(3vmax + 1em);
+    color: var(--primary-clr);
+    letter-spacing: calc(3vmax + 3px);
+}
+h1 .alrasyid {
+    font-family: 'Megrim';
+    font-size: calc(2vmax + 1em);
+    color: var(--primary-clr-2);
+    letter-spacing: calc(1.5vmax + 1px);
+}
+
+.quote {
+    display: flex;
+    position: absolute;
+    bottom: 70px;
+    left: 50px;
+}
+.quote-line {
+    width: 2px;
+    height: calc(3vmax + 20px);
+    background-color: var(--primary-clr);
+}
+.quote-text {
+    font-family: 'Metrophobic';
+    margin-left: 30px;
+    color: var(--white-clr);
+    font-size: calc(1vmax + 10px);
+
+}
+
+.bg-img {
+    display: flex;
+    width: 50vmax;
+    height: 130%;
+    background:linear-gradient(rgba(0,12,2,0) 0%,rgba(255,229,0,.3) 100%);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.bg-img img {
+    display: none;
+    position: absolute;
+    height: 100%;
+
+}
+
+/* SOSMED */
+
+.sosmed {
+    order: -1;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: -5em;
+}
+.sosmed i {
+    color: var(--black-clr);
+    font-size: calc(2vmax + 1em);
+}
+
+/* ABOUT */
+.about {
+    /* border: 1px solid orange; */
+    display: flex;
 
 
+}
+.about-img {
+    width: 50%;
+    height: 100%;
+    background:linear-gradient(rgba(0,12,2,0) 0%,rgba(255,229,0,.3) 100%);
+}
+
+.about-box-out {
+    width: 50%;
+    height: 100%;
+    background-color: var(--bg-clr-2);
+    border-radius: 15px;
+    box-shadow: 0 0 15px var(--primary-clr);
+}
+.about-box-out h2 {
+    font-family: 'Gugi';
+    font-size: calc(3vmax + 10px);
+    color: var(--primary-clr-2);
+    margin: 1.5rem;
+}
+.about-box-in {
+    margin: 20px;
+    background-color: var(--secondary-clr2);
+    border-radius: 10px;
+    padding: 20px;
+}
+.about-box-in p {
+    font-family: 'Livvic';
+    font-weight: normal;
+    font-style: normal;
+    color: var(--white-clr);
+    font-size: calc(.3vmax + 1rem);
+}
+.about-box-in button {
+    width: calc(10vmax + 20px);
+    height: calc(2vmax + 20px);
+    font-size: calc(1vmax + 10px);
+    font-family: 'Livvic';
+    color: var(--primary-clr-2);
+    background-color: var(--secondary-clr);
+    border: none;
+    border-radius: 25px;
+    margin-top: 10px;
+    box-shadow: 2px 2px 5px black;
+}
+
+/* Project */
+.project-box {
+    width: 100%;
+    border: 1px solid var(--primary-clr);
+}
+.project h2 {
+    font-family: 'Gugi';
+    font-size: calc(3vmax + 10px);
+    color: var(--primary-clr-2);
+    margin: 1.5rem;
+}
+.menu-project {
+    display: flex;
+    justify-content: space-evenly;
+}
+.but {
+    width: calc(5vmax + 5em);
+    background-color: var(--secondary-clr);
+    font-family: 'Livvic';
+    font-size: calc(1vmax + .5rem);
+    color: var(--white-clr);
+    padding: 10px;
+    border-radius: 5px;
+}
+.but:hover {
+    border: 1px solid var(--primary-clr);
+    color: var(--primary-clr);
+}
+
+.content-project {
+    width: 100%;
+    height: 50vh;
+    background: linear-gradient( rgba(247,183,24,0),rgba(247,183,24,.4),rgba(247,183,24,0));
+}
+
+.slider-project {
+    width: 100%;
+    height: 50px;
+    background-color: var(--black-clr);
+}
+
+.desc-project-box-out {
+    background-color: var(--bg-clr-2);
+    padding: 10px;
+    margin: 15px;
+    border-radius: 10px;
+}
+.desc-project-box-out h3 {
+    font-family: 'Megrim';
+    font-size: calc(2vmax + 5px);
+    color: var(--primary-clr-2);
+    margin: 1.5rem;
+    text-align: center;
+    letter-spacing: calc(1vmax + 5px);
+}
+.desc-project-box-in {
+    background-color: var(--bg-clr);
+    margin: 10px;
+
+}
+.desc-project-box-in p {
+    font-family: 'Livvic';
+    font-weight: normal;
+    font-style: normal;
+    color: var(--white-clr);
+    font-size: calc(.3vmax + .8rem);
+    padding: 20px;
+}
+
+.view-all-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.deco-thin-line {
+    width: 70%;
+    height: 1px;
+    background-color: var(--primary-clr);
+}
+
+.view-all-container button {
+    background-color: var(--secondary-clr);
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    color: var(--primary-clr-2);
+    font-family: 'Livvic';
+    width: calc(15vmax + 20px);
+    height: calc(2vmax + 20px);
+    font-size: calc(1vmax + 5px);
+}
+/* MEDIA QUARY */
 @media (max-width: 768px) {
     nav ul { 
         width: 65%;
 
     }
+    .sosmed {
+        width: 45%;
+    }
+    .about-img {
+        display: none;
+    }
+    .about-box-out {
+        width: 100%;
+        height: 100%;
+    }
 }
-
 @media (max-width: 568px) {
     .menu {
         display: flex;
     }
+    
     nav ul { 
         position: absolute;
         top: 0;
@@ -132,12 +379,25 @@ nav li a:hover {
         opacity: 1;
         transform: translateX(0);
     }
-}
 
+    .hero {
+        margin-top: 100px;
 
-.box1 {
-    width: 200px;
-    height: 200px;
-    margin: auto;
-    background-color: #fff;
+    }
+    .bg-img img {
+        right: -100px;
+    }
+    .sosmed {
+        order: inherit;
+        width: 100%;
+    }
+    .about-img {
+        display: none;
+    }
+    .about-box-out {
+        width: 100%;
+        height: 100%;
+    }
 }
+ 
+ 
