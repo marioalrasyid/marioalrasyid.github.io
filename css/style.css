@@ -27,6 +27,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 35px;
+    z-index: 100;
 }
 nav img {
     width: 55px;
@@ -62,6 +63,7 @@ nav li a:hover {
     height: 20px;
     justify-content: space-between;
     position: relative;
+    z-index: 6;
 }
 .menu input {
     position: absolute;
@@ -71,7 +73,7 @@ nav li a:hover {
     top: -5px;
     opacity: 0;
     cursor: pointer;
-    z-index: 2;
+    z-index: 7;
 }
 .menu span {
     display: block;
@@ -374,7 +376,7 @@ h1 .alrasyid {
         transform: translateX(100%);
         transition: all 800ms;
         opacity: 0;
-        z-index: 99;
+        z-index: 5;
     }
     nav ul.slide {
         opacity: 1;
