@@ -27,27 +27,27 @@
     font-style: normal;
     font-weight: normal;
 }
-@font-face {
+/* @font-face {
     src: url(../Fonts/Livvic-Medium.woff);
     font-family: 'Livvic';
     font-style: normal;
-    font-weight: medium;
-}
+    font-weight: medium; 
+} */
 @font-face {
     src: url(../Fonts/Livvic-Light.woff);
-    font-family: 'Livvic';
+    font-family: 'Livvic light';
     font-style: normal;
     font-weight: lighter;
 }
-@font-face {
+/* @font-face {
     src: url(../Fonts/Livvic-Italic.woff);
     font-family: 'Livvic';
     font-style: italic;
     font-weight: normal;
-}
+} */
 @font-face {
     src: url(../Fonts/Livvic-Bold.woff);
-    font-family: 'Livvic';
+    font-family: 'Livvic bold';
     font-style: bold;
     font-weight: normal;
 }
