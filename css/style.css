@@ -224,6 +224,7 @@ nav li a:hover {
 /* __CONTENT__ */
 .container {
     display: grid;
+    overflow-x: hidden;
 }
 
 
@@ -482,7 +483,10 @@ h1 .alrasyid {
   */
   
   @media (min-width: 768px) and (max-width: 1024px) {
-    
+    nav ul { 
+        width: 65%;
+
+    }
     .header-1 {
         font-size: 4rem;
     }
@@ -526,52 +530,54 @@ h1 .alrasyid {
     ##Screen = B/w 481px to 767px
   */
   
-  @media (min-width: 481px) and (max-width: 767px) {
+  @media (min-width: 350px) and (max-width: 767px) {
     
     .menu {
         display: flex;
     }
-    h1 .mario {
-        font-size: 4.5rem;
-        letter-spacing: calc(3vmax + 3px);
-    }
-    h1 .alrasyid {
-        font-size: 4.5rem;
-        letter-spacing: calc(1.5vmax + 1px);
-    }
-    .sosmed {
-        padding: 10px;
-    }
-    
     nav ul { 
         position: absolute;
         top: 0;
         right: 0;
         height: 100% ;
-        width: 67%;
+        width: 100%;
         align-items: center;
         flex-direction: column;
         background-color: darkolivegreen;
         padding-top: 60px;
         background: rgba(4,29,15,.8);
-        transform: translateX(100%);
+        transform: translateY(-100%);
         transition: all 800ms;
         opacity: 0;
         z-index: 5;
     }
     nav ul.slide {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
+    }
+    h1 .mario {
+        font-size: 4.3rem;
+        letter-spacing: calc(3vmax + 3px);
+    }
+    h1 .alrasyid {
+        font-size: 4.3rem;
+        letter-spacing: calc(1.5vmax + 1px);
+    }
+    .sosmed {
+        padding: 10px;
+    }
+    
+
+    .profile-pic {
+        margin: 15px;
     }
 
-
-
     .header-1 {
-        font-size: 3.4rem;
+        font-size: 3rem;
         padding: 15px 0;
     }
     .header-3 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         padding: 10px 0;
     }
     .parg {
@@ -580,7 +586,7 @@ h1 .alrasyid {
 
     .paragraf {
         margin-top: 50px;
-        margin-left: -200px;
+        margin-left: -150px;
     }
 
     .about_container .border-button {
@@ -588,6 +594,9 @@ h1 .alrasyid {
         right: 0;
         bottom: 5px;
        
+    }
+    .about-me {
+        margin: 10px;
     }
     .about_container .border-button .button {
         font-size: .6rem;
@@ -611,3 +620,8 @@ h1 .alrasyid {
     ##Device = Most of the Smartphones Mobiles (Portrait)
     ##Screen = B/w 320px to 479px
   */
+  @media (min-width: 320px) and (max-width: 480px) {
+  
+    /* CSS */
+    
+  }
