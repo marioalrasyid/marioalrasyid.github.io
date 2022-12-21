@@ -15,6 +15,9 @@
 
 }
 
+html {
+    scroll-behavior: smooth;
+}
 body {
     background-color: var(--bg-clr);
     overflow-x: hidden;
@@ -271,6 +274,7 @@ h1 .alrasyid {
 /* SOSMED */
 .sosmed {
     width: 25%;
+    max-width: 400px;
     height: 100%;
     display: grid;
     justify-content: center;
@@ -286,9 +290,13 @@ h1 .alrasyid {
 
 .sosmed i {
     color: var(--black-clr);
-    font-size: calc(2vmax + 1em);
+    font-size: calc(3vmax + 1em);
 }
-
+.sosmed i:hover {
+    color: var(--primary-clr-2);
+    text-shadow: 4px 4px  var(--secondary-clr),
+                0 0 5px var(--primary-clr);
+}
 
 /* ABOUT----- */
 .about_container {
@@ -344,36 +352,46 @@ h1 .alrasyid {
 .description {
     display: flex;
     position: relative;
-    margin-left: 30px;
+    margin: 0 30px;
     width: 40%;
-    /* width: 40%;
-    height: 100%; */
+    
 }
 .description .header-1,.description .header-3,.description .parg {
     color: #1e1e1e;
+    text-transform: uppercase;
 }
 .description .parg {
     font-family: 'Livvic bold';
+    text-transform: lowercase;
 }
 
 .description-box {
-    position: relative;
+    display: flex;
+    flex-direction: column;
     height: 100%;
+}
 
+.carousel-desc {
+    display: none;
+}
+.carousel-desc.active {
+    display: block;
+    animation: fadeIn 2s ease;
+}
+
+.description-text {
+    margin-bottom: 30px;
 }
 
 .description-box .border-button {
-    position: absolute;
     margin: 20px 0;
-    bottom: 0;
-    left: 0;
 }
 
 /* PROJECT SECTION BUTTON */
 .project_container .border-button {
-    left: 15px;
+    display: block;
 }
-.project_container button {
+.project_container .button {
     --offset: 10px;
     --border-size: 2px;
     display: block;
@@ -400,31 +418,96 @@ h1 .alrasyid {
 } 
 
 
-
-
 .demo {
-    display: flex;
     width: 100%;
-    /* 
-    width: minmax(300px 1080px);
-    height: 100%; */
-    justify-content: center;
-    align-items: center;
+    padding: 20px;
+    /* BACKGROUND STYLE */
     background: rgba(198, 198, 198, 0.26);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8.2px);
     -webkit-backdrop-filter: blur(8.2px);
     border: 1px solid rgba(198, 198, 198, 0.31);
+} 
+
+.carousel {
+    position: relative;
+    height: 100%;
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
-.obj {
-    margin-top: 5px;
-}
-.obj img {
-    object-fit: cover;
-    aspect-ratio: auto 1920/1080;
+.carousel-track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
 }
 
+.carousel-slide {
+    display: none;
+    animation: fadeIn 1.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+.carousel-slide.active {
+    display: block;
+}
+
+.obj-container {
+    width: 100%;
+    height: 100%;
+}
+.obj-container img {
+    width: 100%;
+    height: 100vh;
+    object-fit: contain;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.button--left {
+    left: -35px;
+}
+.button--right {
+    right: -35px;
+}
+.carousel-button img {
+    width: 30px;
+    height: 55px;
+}
+
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    padding: 10 0;
+}
+.carousel-indicator {
+    transform: skewX(30deg);
+    border: 1px solid var(--primary-clr-2);
+    width: 15px;
+    height: 15px;
+    background-color: var(--secondary-clr);
+    margin: 0 10px;
+    cursor: pointer;
+}
+.carousel-nav > .active {
+    background: var(--primary-clr-2);
+    border: 1px solid var(--secondary-clr);
+}
 
 
 
@@ -518,6 +601,11 @@ h1 .alrasyid {
         font-size: 3.8rem;
     }
 
+    .sosmed {
+        width: 30%;
+        padding: 25px;
+    }
+
     .about_container .border-button {
         position: absolute;
         left: 40px;
@@ -530,10 +618,14 @@ h1 .alrasyid {
     ##Screen = B/w 481px to 767px
   */
   
-  @media (min-width: 350px) and (max-width: 767px) {
+  @media (min-width: 480px) and (max-width: 767px) {
     
     .menu {
         display: flex;
+    }
+    nav img {
+        width: 45px;
+        height: 45px;
     }
     nav ul { 
         position: absolute;
@@ -564,7 +656,7 @@ h1 .alrasyid {
         letter-spacing: calc(1.5vmax + 1px);
     }
     .sosmed {
-        padding: 10px;
+        padding: 20px;
     }
     
 
@@ -586,7 +678,7 @@ h1 .alrasyid {
 
     .paragraf {
         margin-top: 50px;
-        margin-left: -150px;
+        margin-left: -140px;
     }
 
     .about_container .border-button {
@@ -603,6 +695,7 @@ h1 .alrasyid {
     }
     .project_container {
         flex-direction: column;
+        background-size: cover;
     }
     .project_container .border-button {
         margin-bottom: -90px;
@@ -622,6 +715,93 @@ h1 .alrasyid {
   */
   @media (min-width: 320px) and (max-width: 480px) {
   
-    /* CSS */
+    .menu {
+        display: flex;
+    }
+    nav img {
+        width: 45px;
+        height: 45px;
+    }
+    nav ul { 
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100% ;
+        width: 100%;
+        align-items: center;
+        flex-direction: column;
+        background-color: darkolivegreen;
+        padding-top: 60px;
+        background: rgba(4,29,15,.8);
+        transform: translateY(-100%);
+        transition: all 800ms;
+        opacity: 0;
+        z-index: 5;
+    }
+    nav ul.slide {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    h1 .mario {
+        font-size: 4.3rem;
+        letter-spacing: calc(3vmax + 3px);
+    }
+    h1 .alrasyid {
+        font-size: 4.3rem;
+        letter-spacing: calc(1.5vmax + 1px);
+    }
+    .sosmed {
+        padding: 20px;
+    }
+
+    .profile-pic {
+        margin: 15px;
+    }
+
+    .header-1 {
+        font-size: 3rem;
+        padding: 15px 0;
+    }
+    .header-3 {
+        font-size: 1.2rem;
+        padding: 10px 0;
+    }
+    .parg {
+        font-size: 1rem;
+    }
+
+    .paragraf {
+        margin-top: 50px;
+        margin-left: -125px;
+    }
+
+    .about_container .border-button {
+        position: absolute;
+        right: 0;
+        bottom: 5px;
+       
+    }
+    .about-me {
+        margin: 10px;
+    }
+    .about_container .border-button .button {
+        font-size: .6rem;
+    }
+    .project_container {
+        flex-direction: column;
+        background-size: cover;
+    
+    }
+    .project_container .border-button {
+        margin-bottom: -90px;
+    }
+    .project_container .border-button button {
+        font-size: .6rem;
+    }
+    .description {
+        width: 100%;
+        margin-bottom: 120px;
+    }
+    
     
   }

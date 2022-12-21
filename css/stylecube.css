@@ -46,8 +46,8 @@ body {
 }
 .cube {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 120px;
+    height: 120px;
     transform-style: preserve-3d;
     transform: rotateX(-30deg);
     animation: animate 10s linear infinite;
@@ -78,14 +78,14 @@ body {
     height: 100%;
     background: #b8f2ff;
     box-shadow: 
-    inset 0 0 50px 10px #0839c2,
-    inset 0 0 50px 20px #266ef6,
-    inset 0 0 40px 30px #47c9ff,
-    inset 0 0 30px 40px #82e9ff,
-    inset 0 0 0px 2em #b8f2ff,
-    inset 0 0 10px 20px #ffff,
-    0 0 25px 5px #7be5fd;
-    transform: rotateY(calc(90deg * var(--i))) translateZ(150px);
+    inset 0 0 40px 8px #9e8e01,
+    inset 0 0 40px 18px #d6d302,
+    inset 0 0 30px 28px #e6f847,
+    inset 0 0 20px 38px #fffb16,
+    inset 0 0 0px 1.8em #fcff42,
+    inset 0 0 1px 30px rgb(254, 255, 186),
+    0 0 16px 3px #fbff22;
+    transform: rotateY(calc(90deg * var(--i))) translateZ(60px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,11 +96,11 @@ body {
 
 .cube div span h2 {
     font-family: 'Averia';
-    -webkit-text-stroke: .1px #4871e4;
+    -webkit-text-stroke: .1px #8b8d01;
     -webkit-text-fill-color: transparent;
     position: absolute;
-    transform: translateZ(5px);
-    font-size: 5.5em;
+    transform: translateZ(4px);
+    font-size: 2.5em;
    
     filter: blur(50px);
     /* text-shadow:
@@ -132,18 +132,18 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 300px;
-    height: 300px;
+    width: 120px;
+    height: 120px;
     background: #b8f2ff;
     box-shadow: 
-    inset 0 0 50px 10px #0839c2,
-    inset 0 0 50px 20px #266ef6,
-    inset 0 0 40px 30px #47c9ff,
-    inset 0 0 30px 40px #82e9ff,
-    inset 0 0 0px 2em #b8f2ff,
-    inset 0 0 10px 20px #ffff,
-    0 0 25px 5px #7be5fd;
-    transform: rotateX(90deg) translateZ(150px);
+    inset 0 0 40px 8px #9e8e01,
+    inset 0 0 40px 18px #d6d302,
+    inset 0 0 30px 28px #e6f847,
+    inset 0 0 20px 38px #fffb16,
+    inset 0 0 0px 1.8em #fcff42,
+    inset 0 0 1px 30px rgb(254, 255, 186),
+    0 0 16px 3px #fbff22;
+    transform: rotateX(90deg) translateZ(60px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -153,8 +153,8 @@ body {
 .top h2 {
     font-family: 'KeaniaOne';
     position: absolute;
-    font-size: 7.5em;
-    transform: rotateY(90deg) rotate(-90deg) translateZ(0px) translateY(-130px);
+    font-size: 2.5em;
+    transform: rotateY(90deg) rotate(-90deg) translateZ(0px) translateY(-70px);
     -webkit-text-stroke: .1px #fae100;
     animation: glich 2800ms infinite;
     text-shadow:
@@ -199,17 +199,17 @@ body {
 .top:before {
     content: '';
     position: absolute;
-    width: 290px;
-    height: 290px;
-    background: #b8f2ff;
-    transform: translateZ(-390px);
+    width: 120px;
+    height: 120px;
+    background: #fde932;
+    transform: translateZ(-180px);
     filter: blur(20px);
     box-shadow:
-    0 0 120px rgba(8, 57, 194, .2),
-    0 0 200px rgba(38, 110, 246, .4),
-    0 0 200px rgba(71, 201, 255, .6),
-    0 0 200px rgba(130, 233, 255, .8),
-    0 0 200px rgba(184, 242, 255, 1);
+    0 0 120px rgba(191, 194, 8, 0.2),
+    0 0 200px rgba(246, 243, 38, 0.4),
+    0 0 200px rgba(255, 252, 71, 0.6),
+    0 0 200px rgba(253, 255, 130, 0.8),
+    0 0 200px rgb(254, 255, 184);
 
     /* 0 0 120px rgba(0,255,0,0.2),
     0 0 200px rgba(0, 225, 0, 0.4),

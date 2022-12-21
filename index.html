@@ -16,8 +16,8 @@
         <nav>
             <img src="img/logo/Logo.svg" alt="">
             <ul>
-                <li><a href="404-page.html">about</a></li>
-                <li><a href="404-page.html">project</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#project">project</a></li>
                 <li><a href="404-page.html">skill</a></li>
                 <li><a href="404-page.html">contact</a></li>
             </ul>
@@ -55,7 +55,7 @@
             </div>  
 
 <!-- ABOUT -->
-            <div class="about_container">
+            <div id="about" class="about_container">
 
                 <div class="profile-pic"><img src="img/pic/Profile.svg" alt=""></div>
                 
@@ -89,19 +89,40 @@
         </div>
         
 <!-- PROJECT -->
-        <div class="project_container">
+        <div id="project" class="project_container">
 
             <div class="description">
 
                 <div class="description-box">
 
-                    <h1 class="header-1">PROJECT_</h1>
-                    <h3 class="header-3"><span>UI/UX</span> | <span>DESIGN</span></h3>
-                    <p class="parg">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus nihil inventore vel illo impedit quo quibusdam, perferendis aliquam molestiae voluptatum repellendus, corrupti veritatis ut et, minus unde libero pariatur ab eaque quaerat fugiat. Non facilis esse obcaecati hic reiciendis at alias illum ut laudantium inventore?
-                    </p>
-                    
-                    <div class="border-button">
-                        <button class="button">
+                    <div class="description-text">
+                        <h1 class="header-1">PROJECT_</h1>
+
+                        <div class="description-container">
+
+                            <div class="carousel-desc">    
+                                <h3 class="header-3"><span class="title">Landing Page</span> | <span class="category">Front End</span></h3>
+                                <p class="parg desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus nihil inventore vel illo impedit quo quibusdam, perferendis aliquam molestiae voluptatum repellendus, corrupti veritatis ut et, minus unde libero pariatur ab eaque quaerat fugiat. Non facilis esse obcaecati hic reiciendis at alias illum ut laudantium inventore?
+                                </p>
+                            </div>
+                            
+                            <div class="carousel-desc active">    
+                                <h3 class="header-3"><span class="title">UI/UX</span> | <span class="category">DESIGN</span></h3>
+                                <p class="parg desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus nihil inventore vel illo impedit quo quibusdam, perferendis aliquam molestiae voluptatum repellendus, corrupti veritatis ut et, minus unde libero pariatur ab eaque quaerat fugiat. Non facilis esse obcaecati hic reiciendis at alias illum ut laudantium inventore?
+                                </p>
+                            </div>
+                            
+                            <div class="carousel-desc">    
+                                <h3 class="header-3"><span class="title">Data Science</span> | <span class="category">Back End</span></h3>
+                                <p class="parg desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus nihil inventore vel illo impedit quo quibusdam, perferendis aliquam molestiae voluptatum repellendus, corrupti veritatis ut et, minus unde libero pariatur ab eaque quaerat fugiat. Non facilis esse obcaecati hic reiciendis at alias illum ut laudantium inventore?
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                        
+                        <div class="border-button">
+                            <button class="button">
                             ALL PROJECT
                             <div class="button__horizontal"></div>
                             <div class="button__vertical"></div>
@@ -114,11 +135,39 @@
             
             
             <div class="demo">
-                <!--  -->
-                <div class="obj">
-                    <img src="img/pic/Google Pixel 2 XL Black and White.png" alt="">
+
+                <div class="carousel">
+
+                    <button class="carousel-button button--left">
+                        <img src="img/icons/keyboard_double_arrow_left_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+                    </button>
+                    
+                    <div class="obj-container">
+                        <ul class="carousel-track">
+                            <li class="carousel-slide active">
+                                <img src="img/pic/DevicePict/Google Pixel 2 XL Black and White.png" alt="">
+                            </li>
+                            <li class="carousel-slide">
+                                <img src="img/pic/DevicePict/Apple iPad Pro 13 Space Gray - Portrait.png" alt="">
+                            </li>
+                            <li class="carousel-slide">
+                                <img src="img/pic/DevicePict/Apple iMac.png" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <button class="carousel-button button--right">
+                        <img src="img/icons/keyboard_double_arrow_right_FILL0_wght400_GRAD0_opsz48.svg" alt="">
+                    </button>
+                    
+                    <div class="carousel-nav">
+                        <button class="carousel-indicator active"></button>
+                        <button class="carousel-indicator"></button>
+                        <button class="carousel-indicator"></button>
+                    </div>
+
                 </div>
-                <!--  -->
+            
             </div>
 
         </div>
@@ -132,4 +181,5 @@
 
 
 <script src="script/slide-css.js"></script>
+<script src="script/carousel.js"></script>
 </html>
