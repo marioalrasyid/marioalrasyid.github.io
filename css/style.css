@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 :root {
-    --bg-clr : rgba(0,12,2,1);
+    --bg-clr : rgb(0, 15, 3);
     --bg-clr-2 : rgba(4,29,15,1);
     --primary-clr : rgba(255,229,0,1);
     --primary-clr-2 : rgba(247,183,24,1);
@@ -41,6 +41,22 @@ body {
     font-family: 'Livvic';
     font-size: 1rem;
 }
+/* SCROLL */
+::-webkit-scrollbar {
+width: 8px;
+background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+background-image: url(../img/bg/scroll.svg);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: bottom;
+}
+
+::-webkit-scrollbar-track {
+background-color: transparent;
+}
 
 /* BUTTON */
 .button {
@@ -62,6 +78,7 @@ body {
     font-weight: 700;
     border-radius: 0;
     box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+    transition: background .2s linear;
   }
   
   .button:hover {
@@ -123,7 +140,7 @@ body {
 
 /* NAVIGATION */
 nav {
-    height: 100px;
+    height: 90px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -224,30 +241,67 @@ nav li a:hover {
     height: 50px;
 }
 
+/* OBSERVER ANIMATION */
+.text-highlight.about-txt{
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.5s ease-in-out 200ms;
+}  
+.text-highlight.about-txt.animated {
+opacity: 1;
+transform: translateX(0);
+}
+
+.text-highlight.project-txt{
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.5s ease-in-out 200ms;
+}
+.text-highlight.project-txt.animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.text-highlight.skills-txt {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.5s ease-in-out 200ms;
+
+}
+.text-highlight.skills-txt.animated {
+    opacity: 1;
+    transform: translateX(0);
+
+}
 /* __CONTENT__ */
 .container {
     display: grid;
     overflow-x: hidden;
 }
 
-
 /* --HERO */
+.hero_container {
+    background-image: url(../img/bg/bg-100.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .hero {
     width: 100%;
     height: 100vh;
     border-top: 1px solid var(--primary-clr);
     border-bottom: 1px solid var(--primary-clr);
-    position: relative;
-    background-image: url(../img/bg/background.svg) ;
+    background-image: url(../img/bg/binary.png) ;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom;
     display: flex;
 }
-
 .hero h1 {
     margin: auto;
     text-align: center;
+    animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) 400ms 1 normal both running;
 }
 h1 .mario {
 
@@ -263,12 +317,25 @@ h1 .alrasyid {
     letter-spacing: calc(1.5vmax + 1px);
 }
 
+@keyframes text-focus-in {
+    0% {
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+    
+    100% {
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
 /* CONTENT */
 .content_container {
     display: flex;
     height: 100vh;
-    width: 100%;
-    
+    width: 100%; 
 }
 
 /* SOSMED */
@@ -287,7 +354,6 @@ h1 .alrasyid {
     gap: 30px;
 
 }
-
 .sosmed i {
     color: var(--black-clr);
     font-size: calc(3vmax + 1em);
@@ -295,9 +361,49 @@ h1 .alrasyid {
 .sosmed i:hover {
     color: var(--primary-clr-2);
     text-shadow: 4px 4px  var(--secondary-clr),
-                0 0 5px var(--primary-clr);
+    0 0 5px var(--primary-clr);
+    animation: flicker 1000ms linear 0ms 1 normal both running;
 }
 
+@keyframes flicker {
+    0% {
+        opacity: 0;
+    }
+    
+    10%, 10.2%, 20%, 20.6%, 30%, 30.6%, 45%, 55.1%, 57%, 60.1%, 65%, 75.1%, 77%, 85.1%, 86% {
+        opacity: 0;
+        text-shadow: none;
+    }
+    10.1% {
+        opacity: 1;
+        text-shadow: none;
+    }
+    20.1% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgb(255 255 255 / 25%);
+    }
+    30.1%, 30.5%, 45.1%, 50%, 55% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgb(255 255 255 / 45%), 0 0 60px rgb(255 255 255 / 25%);
+    }
+    57.1%, 60% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgb(255 255 255 / 55%), 0 0 60px rgb(255 255 255 / 35%);
+    }
+    65.1%, 75% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgb(255 255 255 / 55%), 0 0 60px rgb(255 255 255 / 35%), 0 0 100px rgb(255 255 255 / 10%);
+    }
+    77.1%, 85% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgb(255 255 255 / 55%), 0 0 60px rgb(255 255 255 / 40%), 0 0 110px rgb(255 255 255 / 20%), 0 0 100px rgb(255 255 255 / 10%);
+    }
+    86.1%, 100% {
+        opacity: 1;
+        text-shadow: 0 0 30px rgb(255 255 255 / 60%), 0 0 60px rgb(255 255 255 / 45%), 0 0 110px rgb(255 255 255 / 25%), 0 0 100px rgb(255 255 255 / 10%);
+    }
+
+}
 /* ABOUT----- */
 .about_container {
     display: grid;
@@ -308,34 +414,25 @@ h1 .alrasyid {
     grid-template-columns: 40%;
     grid-template-rows: 100%;
     overflow: hidden;
-
-    
 }
 
 .profile-pic {
     grid-area: pic;
-    /* background-image: url(../img/pic/Profile.svg);
-    background-repeat: no-repeat;
-    background-size: contain; */
     margin-left: 50px;
     margin-top: 20px;
 }
-
 .about-me {
     grid-area: txt;
     margin-top: 30px;
     margin-left: 50px;
     margin-left: 50px;
-    margin-bottom: 50px;
-   
+    margin-bottom: 50px;  
 }
-
 .about_container .border-button {
     position: absolute;
     right: 0px;
     bottom: 10px;
     margin: 30px;
-
 }
 
 /* PROJECT----- */
@@ -364,13 +461,13 @@ h1 .alrasyid {
     font-family: 'Livvic bold';
     text-transform: lowercase;
 }
-
 .description-box {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
+/* CARROUSEL */
 .carousel-desc {
     display: none;
 }
@@ -379,8 +476,10 @@ h1 .alrasyid {
     animation: fadeIn 2s ease;
 }
 
+
 .description-text {
     margin-bottom: 30px;
+    padding-right: 20px;
 }
 
 .description-box .border-button {
@@ -410,9 +509,7 @@ h1 .alrasyid {
     font-weight: 700;
     border-radius: 0;
     box-shadow: inset 0 0 0 var(--border-size) currentcolor;
-
 }
-    
 .project_container .button:hover {
     background: var(--primary-clr-2);
 } 
@@ -435,6 +532,7 @@ h1 .alrasyid {
     width: 90%;
     max-width: 1440px;
     margin: 0 auto;
+    padding-bottom: 30px;
 }
 
 .carousel-track {
@@ -480,40 +578,239 @@ h1 .alrasyid {
 }
 
 .button--left {
-    left: -35px;
+    left: -15px;
 }
 .button--right {
-    right: -35px;
+    right: -15px;
 }
+.carousel-button.button--left img {
+    animation: slideLeft 230ms ease-out;
+}
+.carousel-button.button--right img {
+    animation: slideRight 230ms ease-out;
+}
+
+
 .carousel-button img {
     width: 30px;
     height: 55px;
 }
 
+.carousel-button.button--right img:active {
+    animation: none;
+}
+.carousel-button.button--left img:active {
+    animation: none;
+}
+
+
+@-webkit-keyframes slideRight {
+0% {
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+}
+
+100% {
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+}
+}
+
+@keyframes slideRight {
+0% {
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+}
+
+100% {
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+}
+}
+
+@-webkit-keyframes slideLeft {
+0% {
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+}
+
+100% {
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+}
+
+@keyframes slideLeft {
+0% {
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+}
+
+100% {
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+}
+
 .carousel-nav {
     display: flex;
     justify-content: center;
-    padding: 10 0;
+   
 }
 .carousel-indicator {
     transform: skewX(30deg);
-    border: 1px solid var(--primary-clr-2);
+    border: none;
     width: 15px;
     height: 15px;
-    background-color: var(--secondary-clr);
+    background-color: var(--primary-clr-2);
     margin: 0 10px;
     cursor: pointer;
 }
 .carousel-nav > .active {
-    background: var(--primary-clr-2);
-    border: 1px solid var(--secondary-clr);
+    background: var(--secondary-clr);
+    border: none;
+}
+
+
+
+/* SKILLS */
+.skills_container {
+    position: relative;
+    width: 100%;
+}
+.skills_container .border_container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 28px;
+    padding-top: 60px;
+}
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: var(--primary-clr);
+    margin-left: -50px;
+}
+.skills_container .point-3 {
+    margin-left: 20px;
+}
+
+
+
+.skills-txt {   
+    display: inline-block;
+}
+.skills-txt .header-1 {
+    padding: 0;
+    margin-top: -30px;
+    margin-left: 30px;
+    padding-bottom: 25px;
+}
+.skills_container .point-long {
+    display: inline-block;
+    width: 30px;
+    height: 15px;
+    margin-bottom: 30px;
+    margin-left: 15px;
+    
 }
 
 
 
 
+.accordion {
+    width: 100%;
+    display: grid;
+    row-gap: 30px;
+}
+  
+  .accordion-item {
+    width: 100%;
+    background: var(--bg-clr-2);
+    margin-bottom: 5px;
+    overflow: hidden;
+    cursor: pointer;
+}
+.accordion-item.is-open {
+    background: var(--primary-clr);
+}
+.accordion-title {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
 
 
+.accordion-title .header-3 {
+    padding-left: 76px;
+    font-size: 2.3rem;
+    color: var(--primary-clr-2);
+    transition: all .5s ease-in;
+}
+.accordion-item.is-open .accordion-title .header-3 {
+    color: var(--secondary-clr);
+    transform: translateX(80%);
+}
+
+
+.accordion-title .header-3:hover{
+    color: var(--secondary-clr);
+}
+.accordion-title:hover {
+    background: var(--primary-clr);
+}
+
+.content-title {
+    font-family: 'Megrim';
+    font-size: 1.8rem ; 
+    color: var(--white-clr);
+    padding: 20px;
+}
+
+.accordion-content {
+    /* width: 95vw; */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease; 
+    background-color: var(--bg-clr);
+    border: 1px solid var(--primary-clr);
+}
+.accordion-item.is-open .accordion-content {
+    max-height: 100vh;
+}
+.content-item {
+    margin-left: calc(3vmax + 7px );
+    border-radius: 30px;
+    margin-bottom: 30px;
+    height: 50px;
+    width: 100%;
+    background-color: var(--bg-clr-2);
+}
+
+
+.skills_container .border-button {
+    width: 100%;
+    transform: translateX(75%);
+    margin: 50px;
+}
 
 
 
@@ -521,287 +818,322 @@ h1 .alrasyid {
 
 
 /* MEDIA QUARY */
+@media (min-width: 1281px) {
 
+/* CSS */
 
+}
 
 /* 
-  ##Device = Desktops
-  ##Screen = 1281px to higher resolution desktops
+##Device = Laptops, Desktops
+##Screen = B/w 1025px to 1280px
 */
 
-@media (min-width: 1281px) {
-  
-    /* CSS */
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+.header-1 {
+    font-size: 4.5rem;
+}
+nav ul { 
+    width: 65%;
+
+}
+nav li a {
+    letter-spacing: 5px;
+}
+.about_container .border-button {
+    position: absolute;
+    left: 230px;
+    bottom: 50px;
+}
+.skills_container .border-button {
+    transform: translateX(70%);
+}
+}
+
+/* 
+##Device = Tablets, Ipads (portrait)
+##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+nav ul { 
+    width: 65%;
+
+}
+.header-1 {
+    font-size: 4rem;
+}
+
+.about_container .border-button {
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+}
+.skills_container .border-button {
+    transform: translateX(65%);
+}
+
+}
+
+/* 
+##Device = Tablets, Ipads (landscape)
+##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+nav li a {
+    letter-spacing: 4px;
+}
+nav ul { 
+    width: 75%;
+
+}
+
+.header-1 {
+    font-size: 3.8rem;
+}
+
+.sosmed {
+    width: 30%;
+    padding: 25px;
+}
+
+
+
+.about_container .border-button {
+    position: absolute;
+    left: 40px;
+    bottom: 50px;
+}
+
+.skills_container .border_container {
+    padding-top: 26px;
+}
+
+.skills_container .border-button {
+    transform: translateX(70%);
+}
+}
+
+/* 
+##Device = Low Resolution Tablets, Mobiles (Landscape)
+##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 480px) and (max-width: 767px) {
+
+.menu {
+    display: flex;
+}
+nav {
+    height: 25px;
+    padding: 35px 25px;
+}
+nav img {
+    width: 45px;
+    height: 45px;
+}
+nav ul { 
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100% ;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    background-color: darkolivegreen;
+    padding-top: 60px;
+    background: rgba(4,29,15,.8);
+    transform: translateY(-100%);
+    transition: all 800ms;
+    opacity: 0;
+    z-index: 5;
+}
+nav ul.slide {
+    opacity: 1;
+    transform: translateY(0);
+}
+h1 .mario {
+    font-size: 4.3rem;
+    letter-spacing: calc(3vmax + 3px);
+}
+h1 .alrasyid {
+    font-size: 4.3rem;
+    letter-spacing: calc(1.5vmax + 1px);
+}
+.sosmed {
+    padding: 20px;
+}
+
+
+.profile-pic {
+    margin: 15px;
+}
+
+.header-1 {
+    font-size: 3rem;
+    padding: 15px 0;
+}
+.header-3 {
+    font-size: 1.2rem;
+    padding: 10px 0;
+}
+.parg {
+    font-size: 1rem;
+}
+
+.paragraf {
+    margin-top: 50px;
+    margin-left: -140px;
+}
+
+.about_container .border-button {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
     
-  }
-  
-  /* 
-    ##Device = Laptops, Desktops
-    ##Screen = B/w 1025px to 1280px
-  */
-  
-  @media (min-width: 1025px) and (max-width: 1280px) {
+}
+.about-me {
+    margin: 10px;
+}
+.about_container .border-button .button {
+    font-size: .6rem;
+}
+.project_container {
+    flex-direction: column;
+    background-size: cover;
+}
+.project_container .border-button {
+    margin-bottom: -90px;
+}
+.project_container .border-button button {
+    font-size: .6rem;
+}
+.description {
+    width: 100%;
+    margin-bottom: 120px;
+}
+.parg.desc {
+    padding-right: 40px;
+}
+.skills_container .border_container {
+    padding-top: 25px;
+}
+.skills_container .border-button {
+    transform: translateX(47%);
+}
+
+}
+
+/* 
+##Device = Most of the Smartphones Mobiles (Portrait)
+##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+
+.menu {
+    display: flex;
+}
+nav {
+    height: 50px;
+    padding: 15px;
+}
+nav img {
+    width: 35px;
+    height: 35px;
+}
+nav ul { 
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100% ;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    background-color: darkolivegreen;
+    padding-top: 60px;
+    background: rgba(4,29,15,.8);
+    transform: translateY(-100%);
+    transition: all 800ms;
+    opacity: 0;
+    z-index: 5;
+}
+nav ul.slide {
+    opacity: 1;
+    transform: translateY(0);
+}
+h1 .mario {
+    font-size: 4.3rem;
+    letter-spacing: calc(3vmax + 3px);
+}
+h1 .alrasyid {
+    font-size: 4.3rem;
+    letter-spacing: calc(1.5vmax + 1px);
+}
+.sosmed {
+    padding: 20px;
+}
+
+.profile-pic {
+    margin: 15px;
+}
+
+.header-1 {
+    font-size: 3rem;
+    padding: 15px 0;
+}
+.header-3 {
+    font-size: 1.2rem;
+    padding: 10px 0;
+}
+.parg {
+    font-size: 1rem;
+}
+
+.paragraf {
+    margin-top: 10px;
+    margin-left: -125px;
+}
+
+.about_container .border-button {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
     
-    .header-1 {
-        font-size: 4.5rem;
-    }
-    nav ul { 
-        width: 65%;
+}
+.about-me {
+    margin: 10px;
+}
+.about_container .border-button .button {
+    font-size: .6rem;
+}
+.project_container {
+    flex-direction: column;
+    background-size: cover;
 
-    }
-    nav li a {
-        letter-spacing: 5px;
-    }
-    .about_container .border-button {
-        position: absolute;
-        left: 230px;
-        bottom: 50px;
-    }
-    
-  }
-  
-  /* 
-    ##Device = Tablets, Ipads (portrait)
-    ##Screen = B/w 768px to 1024px
-  */
-  
-  @media (min-width: 768px) and (max-width: 1024px) {
-    nav ul { 
-        width: 65%;
+}
+.project_container .border-button {
+    margin-bottom: -90px;
+}
+.project_container .border-button button {
+    font-size: .6rem;
+}
+.description {
+    width: 100%;
+    margin-bottom: 120px;
+}
+.parg.desc {
+    padding-right: 50px;
+}
 
-    }
-    .header-1 {
-        font-size: 4rem;
-    }
+.skills_container .border_container {
+    padding-top: 20px;
+}
+.skills_container .border-button {
+    transform: translateX(40%);
+}
 
-    .about_container .border-button {
-        position: absolute;
-        left: 50px;
-        bottom: 50px;
-    }
-    
-  }
-  
-  /* 
-    ##Device = Tablets, Ipads (landscape)
-    ##Screen = B/w 768px to 1024px
-  */
-  
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    
-    nav li a {
-        letter-spacing: 4px;
-    }
-    nav ul { 
-        width: 75%;
 
-    }
-
-    .header-1 {
-        font-size: 3.8rem;
-    }
-
-    .sosmed {
-        width: 30%;
-        padding: 25px;
-    }
-
-    .about_container .border-button {
-        position: absolute;
-        left: 40px;
-        bottom: 50px;
-    }
-  }
-  
-  /* 
-    ##Device = Low Resolution Tablets, Mobiles (Landscape)
-    ##Screen = B/w 481px to 767px
-  */
-  
-  @media (min-width: 480px) and (max-width: 767px) {
-    
-    .menu {
-        display: flex;
-    }
-    nav img {
-        width: 45px;
-        height: 45px;
-    }
-    nav ul { 
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100% ;
-        width: 100%;
-        align-items: center;
-        flex-direction: column;
-        background-color: darkolivegreen;
-        padding-top: 60px;
-        background: rgba(4,29,15,.8);
-        transform: translateY(-100%);
-        transition: all 800ms;
-        opacity: 0;
-        z-index: 5;
-    }
-    nav ul.slide {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    h1 .mario {
-        font-size: 4.3rem;
-        letter-spacing: calc(3vmax + 3px);
-    }
-    h1 .alrasyid {
-        font-size: 4.3rem;
-        letter-spacing: calc(1.5vmax + 1px);
-    }
-    .sosmed {
-        padding: 20px;
-    }
-    
-
-    .profile-pic {
-        margin: 15px;
-    }
-
-    .header-1 {
-        font-size: 3rem;
-        padding: 15px 0;
-    }
-    .header-3 {
-        font-size: 1.2rem;
-        padding: 10px 0;
-    }
-    .parg {
-        font-size: 1rem;
-    }
-
-    .paragraf {
-        margin-top: 50px;
-        margin-left: -140px;
-    }
-
-    .about_container .border-button {
-        position: absolute;
-        right: 0;
-        bottom: 5px;
-       
-    }
-    .about-me {
-        margin: 10px;
-    }
-    .about_container .border-button .button {
-        font-size: .6rem;
-    }
-    .project_container {
-        flex-direction: column;
-        background-size: cover;
-    }
-    .project_container .border-button {
-        margin-bottom: -90px;
-    }
-    .project_container .border-button button {
-        font-size: .6rem;
-    }
-    .description {
-        width: 100%;
-        margin-bottom: 120px;
-    }
-    }
-  
-  /* 
-    ##Device = Most of the Smartphones Mobiles (Portrait)
-    ##Screen = B/w 320px to 479px
-  */
-  @media (min-width: 320px) and (max-width: 480px) {
-  
-    .menu {
-        display: flex;
-    }
-    nav img {
-        width: 45px;
-        height: 45px;
-    }
-    nav ul { 
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100% ;
-        width: 100%;
-        align-items: center;
-        flex-direction: column;
-        background-color: darkolivegreen;
-        padding-top: 60px;
-        background: rgba(4,29,15,.8);
-        transform: translateY(-100%);
-        transition: all 800ms;
-        opacity: 0;
-        z-index: 5;
-    }
-    nav ul.slide {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    h1 .mario {
-        font-size: 4.3rem;
-        letter-spacing: calc(3vmax + 3px);
-    }
-    h1 .alrasyid {
-        font-size: 4.3rem;
-        letter-spacing: calc(1.5vmax + 1px);
-    }
-    .sosmed {
-        padding: 20px;
-    }
-
-    .profile-pic {
-        margin: 15px;
-    }
-
-    .header-1 {
-        font-size: 3rem;
-        padding: 15px 0;
-    }
-    .header-3 {
-        font-size: 1.2rem;
-        padding: 10px 0;
-    }
-    .parg {
-        font-size: 1rem;
-    }
-
-    .paragraf {
-        margin-top: 50px;
-        margin-left: -125px;
-    }
-
-    .about_container .border-button {
-        position: absolute;
-        right: 0;
-        bottom: 5px;
-       
-    }
-    .about-me {
-        margin: 10px;
-    }
-    .about_container .border-button .button {
-        font-size: .6rem;
-    }
-    .project_container {
-        flex-direction: column;
-        background-size: cover;
-    
-    }
-    .project_container .border-button {
-        margin-bottom: -90px;
-    }
-    .project_container .border-button button {
-        font-size: .6rem;
-    }
-    .description {
-        width: 100%;
-        margin-bottom: 120px;
-    }
-    
-    
-  }
+}
