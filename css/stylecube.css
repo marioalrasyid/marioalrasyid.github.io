@@ -7,8 +7,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'KeaniaOne';
-    -webkit-text-fill-color: #387D32;
-    color: #0f0;
 
 }
 
@@ -25,24 +23,14 @@ body {
     top: 0;
     left: 0;
     margin: 20px;
-    text-shadow:
-    -5px -5px 5px #ff41c6,
-    5px 5px 2px #09daff,
-    0px 0px 10px #ffffff;
-    -webkit-text-stroke: .3px #c3f4ff;
-    -webkit-text-fill-color: rgb(214, 214, 214);
+    animation: flicker 4500ms ease-in infinite alternate;
+}
+.attention h1 {
+    font-family: 'Glich';
+    color: rgba(172, 172, 172, .9);
     font-size: calc(1vmax + 1em);
     letter-spacing: .3vmax;
-    animation: blip 1500ms ease-in infinite alternate;
-}
-@keyframes blip {
-    from{
-        text-shadow: 0px 0px 70px rgba(255,65,200,.8) ;
-    }
-    to{
-        text-shadow: 0 0 30px rgba(35,218,250,.5);
-        opacity: .3;
-    }
+
 }
 .cube {
     position: relative;
@@ -53,6 +41,47 @@ body {
     animation: animate 10s linear infinite;
     
 }
+
+@keyframes flicker {
+    0% {
+        opacity: 0;
+    }
+    
+    10%, 10.2%, 20%, 20.6%, 30%, 30.6%, 45%, 55.1%, 57%, 60.1%, 65%, 75.1%, 77%, 85.1%, 86% {
+        opacity: 0;
+        text-shadow: none;
+    }
+    10.1% {
+        opacity: 1;
+        text-shadow: none;
+    }
+    20.1% {
+        opacity: 1;
+        text-shadow: 1.5px 1.5px 0px rgba(12, 178, 255, 0.25);
+    }
+    30.1%, 30.5%, 45.1%, 50%, 55% {
+        opacity: 1;
+        text-shadow: -1.5px -1.5px 0px rgba(248, 52, 255, 1), 1px 1px 0px rgba(45, 255, 237, 1);
+    }
+    57.1%, 60% {
+        opacity: 1;
+        text-shadow: -1.5px -1.5px 0px rgba(255, 57, 212, 1), 1px 1px 0px rgba(14, 219, 255, 1);
+    }
+    65.1%, 75% {
+        opacity: 1;
+        text-shadow: -1.5px -1.5px 0px rgba(255, 6, 255, 1), 1px 1px 0px rgba(4, 150, 187, 1), 0 0 100px rgba(255, 41, 226, 0.1);
+    }
+    77.1%, 85% {
+        opacity: 1;
+        text-shadow: -1.5px -1.5px 0px rgba(255, 7, 172, 1), 1px 1px 0px rgba(54, 208, 255,1), 0 0 110px rgba(255, 85, 232, 0.2), 0 0 100px rgba(255, 43, 43, 0.1);
+    }
+    86.1%, 100% {
+        opacity: 1;
+        text-shadow: -1.5px -1.5px 0px rgba(255, 47, 210,1), 1px 1px 0px rgba(68, 202, 255, 1), 0 0 110px rgba(255, 79, 232, 0.25), 0 0 100px rgba(255, 115, 115, 0.1);
+    }
+
+}
+
 @keyframes animate {
     0%{
         transform: rotateX(-30deg) rotateY(0deg);
@@ -154,11 +183,12 @@ body {
     font-family: 'KeaniaOne';
     position: absolute;
     font-size: 2.5em;
-    transform: rotateY(90deg) rotate(-90deg) translateZ(0px) translateY(-70px);
+    transform: rotateY(90deg) rotate(-90deg) translateZ(0px) translateY(-120px);
     -webkit-text-stroke: .1px #fae100;
-    animation: glich 2800ms infinite;
+    animation: 2800ms infinite;
     text-shadow:
     0 0 30px #ffe500;
+    animation: glich 3s infinite ease ;
 }
 @keyframes glich {
     0%{
@@ -188,7 +218,7 @@ body {
     5px 5px 5px #09daff,
     0px 0px 75px #ffffff;
     opacity: 1;
-    animation-play-state: paused;
+    animation: flicker 2s infinite linear;
 }
 
 /* .top h2:nth-child(1){
@@ -201,7 +231,7 @@ body {
     position: absolute;
     width: 120px;
     height: 120px;
-    background: #fde932;
+    background: #fcfcb1;
     transform: translateZ(-180px);
     filter: blur(20px);
     box-shadow:

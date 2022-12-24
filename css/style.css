@@ -24,6 +24,9 @@ body {
     background-color: var(--bg-clr);
     overflow-x: hidden;
 }
+a {
+    text-decoration: none;
+}
 /* DEFAULT */
 .header-1 {
     color: var(--primary-clr-2);
@@ -774,7 +777,7 @@ h1 .alrasyid {
 }
 
 .accordion-title .header-3 {
-    padding-left: 76px;
+    padding-left: 16px;
     font-size: 1.7rem;
     font-family: 'Metrophobic';
     color: var(--primary-clr-2);
