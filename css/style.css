@@ -927,6 +927,9 @@ nav ul {
         transform: translateX(70%);
     }
 }
+.bg-text {
+    font-size: calc(5vmax + 3rem);
+}
 }
 
 /* 
@@ -1105,6 +1108,16 @@ h1 .alrasyid {
         transform: translateX(50%);
     }
 }
+.content-item i {
+    padding: 5px;
+    font-size: 35px;
+}
+.content-item i p {
+    font-size: .6rem;
+}
+.bg-text {
+    font-size: calc(5vmax + 2rem);
+}
 }
 
 /* 
@@ -1243,6 +1256,16 @@ h1 .alrasyid {
         transform: translateX(40%);
     }
 }
+.content-item i {
+    padding: 5px;
+    font-size: 25px;
+}
+.content-item i p {
+    font-size: .5rem;
+}
+.bg-text {
+    font-size: calc(5vmax + 2rem);
+}
 }
 
 @media (min-width: 220px) and (max-width: 310px) {
@@ -1377,4 +1400,5 @@ h1 .alrasyid {
         transform: translateX(40%);
     }
 }
+
 }
