@@ -3,6 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;700&display=swap');
 :root {
     --bg-clr : rgb(0, 15, 3);
     --bg-clr-2 : rgba(4,29,15,1);
@@ -22,7 +24,6 @@ body {
     background-color: var(--bg-clr);
     overflow-x: hidden;
 }
-
 /* DEFAULT */
 .header-1 {
     color: var(--primary-clr-2);
@@ -39,6 +40,7 @@ body {
 .parg {
     color: var(--white-clr);
     font-family: 'Livvic';
+    letter-spacing: -.2px;
     font-size: 1rem;
 }
 /* SCROLL */
@@ -141,6 +143,7 @@ background-color: transparent;
 /* NAVIGATION */
 nav {
     height: 90px;
+    background-color: var(--bg-clr);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -578,10 +581,10 @@ h1 .alrasyid {
 }
 
 .button--left {
-    left: -15px;
+    left: -35px;
 }
 .button--right {
-    right: -15px;
+    right: -35px;
 }
 .carousel-button.button--left img {
     animation: slideLeft 230ms ease-out;
@@ -712,8 +715,6 @@ h1 .alrasyid {
     margin-left: 20px;
 }
 
-
-
 .skills-txt {   
     display: inline-block;
 }
@@ -729,19 +730,33 @@ h1 .alrasyid {
     height: 15px;
     margin-bottom: 30px;
     margin-left: 15px;
-    
 }
 
 
-
+.bg-text {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: -1;
+    transform: rotate(-90deg);
+    top:0px;
+    right: -50px;
+    font-size: calc(5vmax + 5rem);
+    font-family: 'Megrim';
+    pointer-events: none;
+    user-select: none;
+    -webkit-text-stroke: 1px #003510;
+    -webkit-text-fill-color: transparent;
+}
 
 .accordion {
     width: 100%;
+    max-width: 100vw;
     display: grid;
     row-gap: 30px;
 }
   
-  .accordion-item {
+.accordion-item {
     width: 100%;
     background: var(--bg-clr-2);
     margin-bottom: 5px;
@@ -753,23 +768,23 @@ h1 .alrasyid {
 }
 .accordion-title {
     display: block;
-    padding: 15px;
+    padding: 0px;
     text-decoration: none;
     transition: all 0.2s ease;
 }
 
-
 .accordion-title .header-3 {
     padding-left: 76px;
-    font-size: 2.3rem;
+    font-size: 1.7rem;
+    font-family: 'Metrophobic';
     color: var(--primary-clr-2);
     transition: all .5s ease-in;
 }
 .accordion-item.is-open .accordion-title .header-3 {
     color: var(--secondary-clr);
-    transform: translateX(80%);
-}
+    animation: skewSlideRight alternate 900ms ease forwards;
 
+}
 
 .accordion-title .header-3:hover{
     color: var(--secondary-clr);
@@ -778,15 +793,30 @@ h1 .alrasyid {
     background: var(--primary-clr);
 }
 
+@keyframes skewSlideRight {
+    0% {
+        transform: skewX(0);
+    }
+    10% {
+        transform: skewX(45deg);
+    }
+    100% {
+        transform: skewX(0);
+        transform: translateX(80%);
+    }
+}
+
+
+
 .content-title {
     font-family: 'Megrim';
-    font-size: 1.8rem ; 
+    font-size: 1.5rem ; 
+    letter-spacing: 2px;
     color: var(--white-clr);
     padding: 20px;
 }
 
 .accordion-content {
-    /* width: 95vw; */
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease; 
@@ -797,15 +827,27 @@ h1 .alrasyid {
     max-height: 100vh;
 }
 .content-item {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     margin-left: calc(3vmax + 7px );
-    border-radius: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
     margin-bottom: 30px;
-    height: 50px;
-    width: 100%;
+    
     background-color: var(--bg-clr-2);
 }
-
-
+.content-item i {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    font-size: 45px;
+    color: var(--primary-clr-2);
+}
+.content-item i p {
+    padding-left: 10px;
+    font-size: .8rem;
+}
 .skills_container .border-button {
     width: 100%;
     transform: translateX(75%);
@@ -873,7 +915,18 @@ nav ul {
 .skills_container .border-button {
     transform: translateX(65%);
 }
-
+@keyframes skewSlideRight {
+    0% {
+        transform: skewX(0);
+    }
+    10% {
+        transform: skewX(45deg);
+    }
+    100% {
+        transform: skewX(0);
+        transform: translateX(70%);
+    }
+}
 }
 
 /* 
@@ -925,11 +978,17 @@ nav ul {
 @media (min-width: 480px) and (max-width: 767px) {
 
 .menu {
+    position: fixed;
+    right: 10px;
     display: flex;
+}
+.menu span {
+    border: .5px solid var(--primary-clr-2);
 }
 nav {
     height: 25px;
     padding: 35px 25px;
+    
 }
 nav img {
     width: 45px;
@@ -952,6 +1011,7 @@ nav ul {
     z-index: 5;
 }
 nav ul.slide {
+    position: fixed;
     opacity: 1;
     transform: translateY(0);
 }
@@ -1024,7 +1084,27 @@ h1 .alrasyid {
 .skills_container .border-button {
     transform: translateX(47%);
 }
-
+.skills_container .border-button button {
+    font-size: .6rem;
+}
+.accordion-title .header-3 {
+    font-size: 1.3rem;
+}
+.content-title {
+    font-size: 1.1rem ; 
+}
+@keyframes skewSlideRight {
+    0% {
+        transform: skewX(0);
+    }
+    10% {
+        transform: skewX(45deg);
+    }
+    100% {
+        transform: skewX(0);
+        transform: translateX(50%);
+    }
+}
 }
 
 /* 
@@ -1034,7 +1114,12 @@ h1 .alrasyid {
 @media (min-width: 320px) and (max-width: 480px) {
 
 .menu {
+    position: fixed;
+    right: 10px;
     display: flex;
+}
+.menu span {
+    border: .5px solid var(--primary-clr-2);
 }
 nav {
     height: 50px;
@@ -1061,6 +1146,7 @@ nav ul {
     z-index: 5;
 }
 nav ul.slide {
+    position: fixed;
     opacity: 1;
     transform: translateY(0);
 }
@@ -1094,7 +1180,7 @@ h1 .alrasyid {
 
 .paragraf {
     margin-top: 10px;
-    margin-left: -125px;
+    margin-left: -105px;
 }
 
 .about_container .border-button {
@@ -1131,9 +1217,164 @@ h1 .alrasyid {
 .skills_container .border_container {
     padding-top: 20px;
 }
+
+
 .skills_container .border-button {
-    transform: translateX(40%);
+    transform: translateX(38%);
+}
+.skills_container .border-button button {
+    font-size: .6rem;
+}
+.accordion-title .header-3 {
+    font-size: 1.3rem;
+}
+.content-title {
+    font-size: .8rem ; 
+}
+@keyframes skewSlideRight {
+    0% {
+        transform: skewX(0);
+    }
+    10% {
+        transform: skewX(45deg);
+    }
+    100% {
+        transform: skewX(0);
+        transform: translateX(40%);
+    }
+}
+}
+
+@media (min-width: 220px) and (max-width: 310px) {
+/* MALESSS HP NOKIA APA */
+.menu {
+    position: fixed;
+    right: 10px;
+    display: flex;
+}
+.menu span {
+    border: .5px solid var(--primary-clr-2);
+}
+nav {
+    height: 50px;
+    padding: 15px;
+}
+nav img {
+    width: 35px;
+    height: 35px;
+}
+nav ul { 
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100% ;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    background-color: darkolivegreen;
+    padding-top: 60px;
+    background: rgba(4,29,15,.8);
+    transform: translateY(-100%);
+    transition: all 800ms;
+    opacity: 0;
+    z-index: 5;
+}
+nav ul.slide {
+    position: fixed;
+    opacity: 1;
+    transform: translateY(0);
+}
+h1 .mario {
+    font-size: 4.3rem;
+    letter-spacing: calc(3vmax + 3px);
+}
+h1 .alrasyid {
+    font-size: 4.3rem;
+    letter-spacing: calc(1.5vmax + 1px);
+}
+.sosmed {
+    padding: 20px;
+}
+
+.profile-pic {
+    margin: 15px;
+}
+
+.header-1 {
+    font-size: 3rem;
+    padding: 15px 0;
+}
+.header-3 {
+    font-size: 1.2rem;
+    padding: 10px 0;
+}
+.parg {
+    font-size: 1rem;
+}
+
+.paragraf {
+    margin-top: 10px;
+    margin-left: -105px;
+}
+
+.about_container .border-button {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+    
+}
+.about-me {
+    margin: 10px;
+}
+.about_container .border-button .button {
+    font-size: .6rem;
+}
+.project_container {
+    flex-direction: column;
+    background-size: cover;
+
+}
+.project_container .border-button {
+    margin-bottom: -90px;
+}
+.project_container .border-button button {
+    font-size: .6rem;
+}
+.description {
+    width: 100%;
+    margin-bottom: 120px;
+}
+.parg.desc {
+    padding-right: 50px;
+}
+
+.skills_container .border_container {
+    padding-top: 20px;
 }
 
 
+.skills_container .border-button {
+    transform: translateX(38%);
+}
+.skills_container .border-button button {
+    font-size: .6rem;
+}
+.accordion-title .header-3 {
+    font-size: 1.3rem;
+}
+.content-title {
+    font-size: .8rem ; 
+}
+@keyframes skewSlideRight {
+    0% {
+        transform: skewX(0);
+    }
+    10% {
+        transform: skewX(45deg);
+    }
+    100% {
+        transform: skewX(0);
+        transform: translateX(40%);
+    }
+}
 }
