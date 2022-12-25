@@ -363,7 +363,7 @@ h1 .alrasyid {
 /* SOSMED */
 .sosmed {
     width: 25%;
-    max-width: 100px;
+    max-width: 150px;
     height: 100%;
     display: grid;
     justify-content: center;
