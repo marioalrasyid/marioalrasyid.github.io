@@ -1361,7 +1361,7 @@ footer {
     background-repeat: no-repeat;
     background-size: 300%;
     background-position: left;
-
+    box-shadow: 0 2px 75px black, inset 0 5px 20px rgb(0, 2, 0);
 }
 .icon-box {
     margin: auto;
