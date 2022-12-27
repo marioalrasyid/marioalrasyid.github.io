@@ -27,7 +27,7 @@ body {
 }
 .attention h1 {
     font-family: 'Glich';
-    color: rgba(172, 172, 172, .9);
+    color: rgba(0, 0, 0, 0.9);
     font-size: calc(1vmax + 1em);
     letter-spacing: .3vmax;
 
