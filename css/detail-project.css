@@ -1,0 +1,353 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --bg-clr : rgb(0, 15, 3);
+    --bg-clr-2 : rgba(4,29,15,1);
+    --primary-clr : rgba(255,229,0,1);
+    --primary-clr-2 : rgba(247,183,24,1);
+    --secondary-clr : rgba(0,23,71,1);
+    --secondary-clr-2 : rgba(1,0,41,1);
+    --white-clr : rgba(230,230,230,1);
+    --black-clr : rgba(47,47,47,1);
+
+}
+
+/* SCROLL */
+::-webkit-scrollbar {
+width: 8px;
+background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+background-color: var(--black-clr);
+border-radius: 5px;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: bottom;
+}
+
+::-webkit-scrollbar-track {
+background-color: transparent;
+}
+    
+.container {
+    background-color: var(--bg-clr);
+    position: relative;
+    overflow: hidden;
+}
+.bg-text {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    /* transform: rotate(-90deg); */
+    font-size: calc(5vmax + 10rem);
+    font-family: 'Megrim';
+    pointer-events: none;
+    user-select: none;
+    -webkit-text-stroke: 1px #003510;
+    -webkit-text-fill-color: transparent;
+}
+.line-1 {
+    position: absolute;
+    width: 25px;
+    height: 100%;
+    background-color: var(--primary-clr);
+    left: 0;
+    z-index: 2;
+}
+.line-2 {
+    position: absolute;
+    width: 25px;
+    height: 100%;
+    background-color: var(--primary-clr);
+    right: 0;
+    z-index: 2;
+}
+
+
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
+    margin: auto;
+    padding: 0 0px 30px 0px ;
+    z-index: 5;
+}
+.tab-left {
+    width: 300px;
+    /* height: 100%; */
+    background-color: transparent;
+    border-left: 100px solid var(--primary-clr);
+    border-bottom: 50px solid transparent;
+}
+
+.tab-right {
+    width:300px;
+    /* height: 100%; */
+    background-color: transparent;
+    border-right: 100px solid var(--primary-clr);
+    border-bottom: 50px solid transparent;
+
+}
+
+header h1 {
+    font-family: 'Gugi';
+    color: var(--primary-clr-2);
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid var(--primary-clr);
+}
+header img {
+    width: 82px;
+    height: 82px;
+    margin: 10px;
+    transform: translateY(20px);
+}
+
+
+
+.card__cont {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+label {
+
+    display: block;
+    padding: 10px;
+    width: 337px;
+    height: 500px;
+    margin: 40px 20px;
+    perspective: 1000px;
+}
+
+.card-flip {
+    /* background-color: darkblue; */
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: all 0.8s;
+    transform-style: preserve-3d;
+}
+:checked + .card-flip {
+    transform: rotateY(180deg);
+
+}
+
+label:checked + .card-flip{
+    transform: rotateY(175deg);
+}
+
+input {
+    display: none;
+}
+button {
+    cursor: pointer;
+}
+
+.front-card, .back-card {
+    overflow: hidden;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+.front-card h1 {
+    font-family: 'Megrim';
+    color: var(--primary-clr);
+    margin: 20px;
+}
+.back-card h1 {
+    font-family: 'Megrim';
+    color: var(--black-clr);
+    margin: 15px;
+}
+.front-card h2 {
+    position: absolute;
+    z-index: 1;
+    left: -240px;
+    top: 250px;
+    font-size: 8rem;
+    font-family: 'Megrim';
+    color: var(--secondary-clr);
+    margin: 15px;
+    transform: rotate(-90deg);
+    pointer-events: none;
+    user-select: none;
+}
+.front-card {
+    background-color: var(--secondary-clr);
+}
+.back-card {
+    background-color: var(--primary-clr);
+    transform: rotateY(180deg);
+}
+
+label .img-cont {
+    position: absolute;
+    z-index: 3;
+    right: -2px;
+    width: 80%;
+    height: 75%;
+    border: 1px solid var(--primary-clr);
+}
+label img {
+    width: 100%;
+    height: 100%;
+}
+.desc-parg {
+    background: var(--primary-clr-2);
+    width: 85%;
+    height: 70%;
+    margin: auto;
+    border-radius: 8px;
+    padding: 15px;
+    overflow-y: scroll;
+    
+}
+label p {
+    font-family: "Livvic";
+}
+label button {
+    width: 85px;
+    height: 45px;
+    margin: 15px;
+    border: none;
+    border-radius: 5px;
+    background: var(--secondary-clr);
+    box-shadow:2px 2px 3px rgba(47,47,47,.8), -1px -1px 5px rgba(230,230,230,.7);
+}
+button p {
+    font-family: 'Livvic';
+    font-size: 1.2rem;
+    color: var(--primary-clr-2);
+}
+
+/* DECORATION */
+.deco-side {
+    position: absolute;
+    top: -50px;
+    z-index: -1;
+    background: var(--primary-clr-2);
+    width: 200px;
+    height: 150%;
+    transform: rotate(-45deg);
+    
+
+}
+
+/* DETAILS*/
+#detailCard-1 {
+    display: none;
+}
+#detailCard-2 {
+    display: none;
+}
+.detail-cont {
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    bottom: 0;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+.detail-content {
+    position:sticky;
+    display: flex;
+    width: 100vw;
+    height: 80vh;
+    margin-top: 5%;
+    background-color: var(--bg-clr);    
+}
+.detail-desc {
+    padding: 40px;
+}
+.detail-desc h1 {
+    margin-bottom: 10px;
+    font-family: 'Gugi';
+    color: var(--primary-clr);
+}
+.detail-desc h3 {
+    font-family: 'Livvic';
+    color: var(--primary-clr-2);
+}
+.detail-desc p {
+    color: var(--white-clr);
+    margin-bottom: 30px;
+}
+
+.detail-content img {
+    width: auto;
+    height: 100%;
+}
+
+/* CLOSE BUTTON */
+.close {
+    display: flex;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: absolute;
+    right: 30px;
+    top: 15px;
+    z-index: 100;
+}
+.close input {
+    position: absolute;
+    top: -10px;
+    width: 45px;
+    height: 45px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 120;
+    display: block;
+}
+.close span {
+    display: block;
+    width: 45px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--primary-clr);
+    transition: all 800ms;
+}
+span:nth-child(2){
+    transform: rotate(45deg);
+    translate:0 17px ;
+    background-color: aliceblue;
+}
+span:nth-child(3){
+    transform: rotate(-45deg);
+    background-color: aliceblue;
+}
+
+/* BREAK POINT */
+
+@media (min-width: 310px) {
+    header h1 {
+
+    }
+}
+@media (min-width: 640px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+}

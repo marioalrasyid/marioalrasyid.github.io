@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;700&display=swap');
 :root {
     --bg-clr : rgb(0, 15, 3);
     --bg-clr-2 : rgba(4,29,15,1);
