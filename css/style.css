@@ -215,7 +215,7 @@ nav li a:hover {
     transform-origin: 0 100%;
 }
 .menu input:checked ~ span:nth-child(2){
-    transform: rotate(45deg);
+    transform: rotate(42deg);
     background-color: aliceblue;
 }
 .menu input:checked ~ span:nth-child(3){
@@ -223,7 +223,7 @@ nav li a:hover {
     opacity : 0;
 }
 .menu input:checked ~ span:nth-child(4){
-    transform: rotate(-45deg);
+    transform: rotate(-42deg);
     background-color: aliceblue;
 }
 

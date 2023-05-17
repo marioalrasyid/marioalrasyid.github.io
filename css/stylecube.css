@@ -20,8 +20,8 @@ body {
 .attention {
     font-family: 'Glich';
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 85%;
+    left: 30;
     margin: 20px;
     animation: flicker 4500ms ease-in infinite alternate;
 }

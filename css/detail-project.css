@@ -343,7 +343,7 @@ span:nth-child(3){
 
 @media (min-width: 310px) {
     header h1 {
-
+        font-size: 1.8rem;
     }
 }
 @media (min-width: 640px) {
