@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-clr : rgb(0, 15, 3);
+    --bg-clr-2 : rgba(4,29,15,1);
+    --primary-clr : rgba(255,229,0,1);
+    --primary-clr-2 : rgba(247,183,24,1);
+    --secondary-clr : rgba(0,23,71,1);
+    --secondary-clr-2 : rgba(1,0,41,1);
+    --white-clr : rgba(230,230,230,1);
+    --black-clr : rgba(47,47,47,1);
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: var(--bg-clr);
+    overflow-x: hidden;
+}
+a {
+    text-decoration: none;
+    color: var(--primary-clr-2);
+}
+
+h1 {
+    font-family: 'Gugi';
+    font-size: 5vw;
+    width: 500px;
+    margin: auto;
+    color: var(--primary-clr-2);
+    padding-top: 20px;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+}
+.img-cont {
+    margin: 20px;
+    display: block;
+    font-family: 'Livvic';
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.img-cont img {
+    width: 500px;
+    border: 5px solid var(--primary-clr-2);
+    border-radius: 10px;
+    margin: 10px 0px 10px 0px;
+} 
+
+.img-cont figcaption a:hover {
+    border-bottom: 2px solid var(--primary-clr-2);
+}
+
+/* MEDIA QUARY */
+
+@media screen and (max-width: 768px) {
+    .img-cont img {
+        width: 400px;
+    }
+    .img-cont {
+        font-size: 1em;
+    }
+
+    h1 {
+        width: 240px;
+    }
+}
